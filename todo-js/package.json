@@ -1,0 +1,16 @@
+{
+  "name": "todo-js",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simple travel to-do list built with plain HTML, CSS and JavaScript.",
+  "scripts": {
+    "start": "echo \"請直接以瀏覽器開啟 index.html （或安裝 Yarn 後自訂啟動指令）\""
+  },
+  "keywords": [
+    "todo",
+    "vanilla-js",
+    "travel"
+  ],
+  "author": "",
+  "license": "MIT"
+}

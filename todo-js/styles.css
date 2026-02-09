@@ -1,0 +1,206 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #f4ece7;
+  color: #5b4b45;
+}
+
+.app {
+  width: 360px;
+  max-width: 100%;
+  max-height: 640px;
+  background: #fbf6f2;
+  border-radius: 18px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  padding: 32px 28px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-header h1 {
+  margin: 0;
+  text-align: center;
+  font-size: 1.4rem;
+  letter-spacing: 0.08em;
+  color: #9a7464;
+}
+
+.app-main {
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0; /* 讓子元素可以正確使用 flex 高度 */
+}
+
+.todo-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+  padding-bottom: 12px;
+  background: #fbf6f2;
+}
+
+.text-input {
+  border-radius: 6px;
+  border: 1px solid #d7b6a6;
+  padding: 10px 14px;
+  font-size: 0.9rem;
+  outline: none;
+  background: #fbf6f2;
+  color: #5b4b45;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.text-input::placeholder {
+  color: #c8a99a;
+}
+
+.text-input:focus {
+  border-color: #c58f7d;
+  box-shadow: 0 0 0 2px rgba(197, 143, 125, 0.18);
+  background-color: #fffaf7;
+}
+
+.hint-text {
+  margin: 2px 0 0;
+  font-size: 0.7rem;
+  color: #b59a8e;
+}
+
+.todo-list-container {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo-item {
+  background: #fdf8f5;
+  border-radius: 10px;
+  padding: 10px 10px 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+  transition: box-shadow 0.15s ease, transform 0.08s ease, background-color 0.15s ease;
+}
+
+.todo-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+}
+
+.todo-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.todo-checkbox {
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  border: 2px solid #cda095;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  outline: none;
+  flex-shrink: 0;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.08s ease;
+}
+
+.todo-checkbox-icon {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+}
+
+.todo-item--selected .todo-checkbox {
+  background: #cda095;
+  border-color: #cda095;
+}
+
+.todo-item--selected .todo-checkbox-icon {
+  background: #ffffff;
+}
+
+.todo-texts {
+  flex: 1;
+  min-width: 0;
+}
+
+.todo-title {
+  font-size: 0.95rem;
+  color: #5b4b45;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.todo-delete-btn {
+  border: none;
+  border-radius: 6px;
+  background: #d79b95;
+  color: #fff;
+  font-size: 0.7rem;
+  width: 32px;
+  height: 26px;
+  cursor: pointer;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.15s ease, transform 0.08s ease, box-shadow 0.15s ease;
+}
+
+.todo-delete-btn:hover {
+  background: #c57d76;
+  box-shadow: 0 2px 6px rgba(197, 125, 118, 0.45);
+}
+
+.todo-delete-btn:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.todo-description {
+  display: none;
+  margin-top: 4px;
+  margin-left: 34px;
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: #b18f82;
+}
+
+.todo-item--expanded .todo-description {
+  display: block;
+}
+
+@media (max-height: 620px) {
+  .app {
+    max-height: 100vh;
+  }
+}
+
